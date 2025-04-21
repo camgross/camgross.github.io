@@ -2,19 +2,19 @@ title:              Cam Gross
 email:              camgross1@gmail.com
 description:        Product Leader exploring AI, the product operating model, strategy, and team development
 author:             An AI Assisted Cam Gross
-baseurl:            "/startbootstrap-clean-blog-jekyll"
+baseurl:            ""
 url:                "https://camgross.github.io"
 
 # Social Profiles
 twitter_username:   camgross
 github_username:    camgross
-facebook_username
+# facebook_username
 BlueSkySocial_username:  camgross.bsky.social
-instagram_username:  
+# instagram_username:  
 linkedin_username: camerongross 
 
 # Add your google-analytics ID here to activate google analytics
-google_analytics:   G-Q1Z0EBR2PW out your google-analytics code
+google_analytics:   G-Q1Z0EBR2PW 
 
 # Build settings
 markdown:           kramdown
