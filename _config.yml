@@ -31,5 +31,7 @@ nav:
     url: /Resume/
   - title: "Case Studies"
     url: /case-studies/
+  - title: "microsims"
+    url: /microsims/
   - title: "Contact"
     url: /contact/
