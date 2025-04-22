@@ -1,6 +1,6 @@
 ---
 layout: page
-title: microsims
+title: Microsims
 permalink: /microsims/
 ---
 
