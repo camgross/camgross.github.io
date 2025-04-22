@@ -1,6 +1,8 @@
 // Trampoline Simulation MicroSim with Labeled Sliders, Unit Toggle, and Animated Jumper
 // Built with p5.js
 
+console.log("sketch.js is loaded");
+
 let weightSlider, forceSlider, gravitySlider;
 let weightLabel, forceLabel, gravityLabel;
 let unitToggle;
@@ -9,7 +11,9 @@ let gravity;
 let useMetric = true;
 
 function setup() {
-  createCanvas(600, 400);
+  let canvas = createCanvas(400, 400);
+  canvas.parent("trampoline-sim-container"); // Attach canvas to the container
+}
 
   // Initialize sliders
   weightSlider = createSlider(40, 120, 70); // kg
