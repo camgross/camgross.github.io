@@ -19,32 +19,36 @@ function setup() {
   let canvasX = canvas.position().x;
   let canvasY = canvas.position().y;
 
+  // Adjust offsets for elements below the canvas
+  let sliderOffsetY = canvasY + height + 20; // 20px below the canvas
+  let labelOffsetY = sliderOffsetY - 20;    // Labels appear just above sliders
+
   // Initialize sliders
   weightSlider = createSlider(40, 120, 70); // kg
-  weightSlider.position(canvasX + 20, canvasY + 420); // Adjusted position
+  weightSlider.position(canvasX + 20, sliderOffsetY); // Adjusted position
   weightSlider.style('width', '120px');
 
   forceSlider = createSlider(0, 100, 50); // percent
-  forceSlider.position(canvasX + 160, canvasY + 420); // Adjusted position
+  forceSlider.position(canvasX + 160, sliderOffsetY); // Adjusted position
   forceSlider.style('width', '120px');
 
   gravitySlider = createSlider(1.6, 9.8, 3.7, 0.1); // Moon to Earth gravity
-  gravitySlider.position(canvasX + 300, canvasY + 420); // Adjusted position
+  gravitySlider.position(canvasX + 300, sliderOffsetY); // Adjusted position
   gravitySlider.style('width', '120px');
 
   // Create labels
   weightLabel = createDiv('');
-  weightLabel.position(canvasX + 20, canvasY + 400); // Adjusted position
+  weightLabel.position(canvasX + 20, labelOffsetY); // Adjusted position
 
   forceLabel = createDiv('');
-  forceLabel.position(canvasX + 160, canvasY + 400); // Adjusted position
+  forceLabel.position(canvasX + 160, labelOffsetY); // Adjusted position
 
   gravityLabel = createDiv('');
-  gravityLabel.position(canvasX + 300, canvasY + 400); // Adjusted position
+  gravityLabel.position(canvasX + 300, labelOffsetY); // Adjusted position
 
   // Create unit toggle checkbox
   unitToggle = createCheckbox('Metric (kg)', true);
-  unitToggle.position(canvasX + 20, canvasY + 450); // Adjusted position
+  unitToggle.position(canvasX + 20, sliderOffsetY + 40); // Below sliders
   unitToggle.changed(toggleUnits);
 
   // Initialize jumper
