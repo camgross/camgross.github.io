@@ -12,6 +12,7 @@ let useMetric = true;
 
 function setup() {
   let canvas = createCanvas(400, 400);
+  console.log("Canvas created:", canvas);
   canvas.parent("trampoline-sim-container"); // Attach canvas to the container
 }
 
@@ -44,11 +45,6 @@ function setup() {
 
   jumper = new Jumper();
 
-
-function toggleUnits() {
-  useMetric = unitToggle.checked();
-  let previousState = useMetric;
-
   // Remove the old checkbox
   unitToggle.remove();
 
@@ -63,7 +59,17 @@ function toggleUnits() {
     weightSlider.elt.min = 88;
     weightSlider.elt.max = 220;
     weightSlider.value(154);
-  }
+
+  // Initialize jumper
+  jumper = new Jumper();
+}   
+
+
+function toggleUnits() {
+  useMetric = unitToggle.checked();
+  let previousState = useMetric;
+
+  
 
   unitToggle.position(100, 450);
   unitToggle.changed(toggleUnits);
