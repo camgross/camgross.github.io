@@ -103,7 +103,15 @@ function drawTrampoline() {
   console.log("drawTrampoline() is running");
   stroke(120);
   strokeWeight(4);
-  line(100, 350, 500, 350);
+
+  // Calculate the horizontal center of the canvas
+  let trampolineWidth = 400; // Adjust the width of the trampoline as needed
+  let leftX = (width - trampolineWidth) / 2; // Left edge of the trampoline
+  let rightX = leftX + trampolineWidth; // Right edge of the trampoline
+  let trampolineY = 350; // Vertical position of the trampoline
+
+  // Draw the trampoline
+  line(leftX, trampolineY, rightX, trampolineY);
 }
 
 class Jumper {
