@@ -14,7 +14,6 @@ function setup() {
   let canvas = createCanvas(400, 400);
   console.log("Canvas created:", canvas);
   canvas.parent("trampoline-sim-container"); // Attach canvas to the container
-}
 
   // Initialize sliders
   weightSlider = createSlider(40, 120, 70); // kg
@@ -58,9 +57,6 @@ if (previousState) {
   weightSlider.value(154);   // Assuming a default value for lbs
 }
 
-// Initialize jumper
-jumper = new Jumper();
-
 function toggleUnits() {
   useMetric = unitToggle.checked();
 
@@ -77,9 +73,8 @@ function getGravityBodyName(value) {
   // Initialize jumper
   jumper = new Jumper();
 }
-  // Initialize jumper
-  jumper = new Jumper();
-}   
+
+
 
 
 function toggleUnits() {
