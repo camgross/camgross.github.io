@@ -69,6 +69,7 @@ function getGravityBodyName(value) {
 
 function draw() {
   background(220);
+  console.log("draw() is running");
   drawTrampoline(); // Draw trampoline
 
   // Update simulation variables
@@ -84,7 +85,9 @@ function draw() {
   jumper.gravity = gravity;
 
   jumper.update();
-  jumper.display();
+console.log("jumper.update() called");
+jumper.display();
+console.log("jumper.display() called");
 
   // Update labels with units and values
   weightLabel.html(`Weight: ${nf(displayWeight, 0, 0)} ${useMetric ? "kg" : "lbs"}`);
@@ -93,6 +96,7 @@ function draw() {
 }
 
 function drawTrampoline() {
+  console.log("drawTrampoline() is running");
   stroke(120);
   strokeWeight(4);
   line(100, 350, 500, 350);
@@ -107,6 +111,7 @@ class Jumper {
     this.gravity = 9.8;
     this.onTrampoline = true;
   }
+
 
   update() {
     if (this.y >= 349) {
