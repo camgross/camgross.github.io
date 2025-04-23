@@ -39,27 +39,44 @@ function setup() {
   gravityLabel = createDiv('');
   gravityLabel.position(400, 400);
 
+  // Remove the existing unit toggle
+unitToggle.remove();
+
+// Store the previous state of the unit toggle
+let previousState = useMetric;
+
+// Create a new checkbox with updated label and position
+if (previousState) {
   unitToggle = createCheckbox('Metric (kg)', true);
+  weightSlider.elt.min = 40;
+  weightSlider.elt.max = 120;
+  weightSlider.value(70);
+} else {
+  unitToggle = createCheckbox('Standard (lbs)', false);
+  weightSlider.elt.min = 88;
+  weightSlider.elt.max = 265; // Assuming a max value for lbs
+  weightSlider.value(154);   // Assuming a default value for lbs
+}
+
+// Initialize jumper
+jumper = new Jumper();
+
+function toggleUnits() {
+  useMetric = unitToggle.checked();
+
+  // Update the position and attach the event listener
   unitToggle.position(100, 450);
   unitToggle.changed(toggleUnits);
+}
 
+function getGravityBodyName(value) {
+  if (value <= 2.5) return "Moon";
+  else if (value <= 6.0) return "Mars";
+  else return "Earth";
+}
+  // Initialize jumper
   jumper = new Jumper();
-
-  // Remove the old checkbox
-  unitToggle.remove();
-
-  // Create a new checkbox with updated label and position
-  if (previousState) {
-    unitToggle = createCheckbox('Metric (kg)', true);
-    weightSlider.elt.min = 40;
-    weightSlider.elt.max = 120;
-    weightSlider.value(70);
-  } else {
-    unitToggle = createCheckbox('Standard (lbs)', false);
-    weightSlider.elt.min = 88;
-    weightSlider.elt.max = 220;
-    weightSlider.value(154);
-
+}
   // Initialize jumper
   jumper = new Jumper();
 }   
@@ -83,6 +100,10 @@ function getGravityBodyName(value) {
 
 function draw() {
   background(220);
+  drawTrampoline() // Draw trampoline
+    stroke(120);
+    strokeWeight(4);
+    line(100, 350, 500, 350);
   ellipse(width / 2, height / 2, 50, 50); // Example drawing
 }
 
@@ -106,11 +127,6 @@ function draw() {
   forceLabel.html(`Leg Force: ${nf(forceSlider.value(), 0, 0)}%`);
   gravityLabel.html(`Gravity: ${getGravityBodyName(gravity)}`);
 
-
-function drawTrampoline() {
-  stroke(120);
-  strokeWeight(4);
-  line(100, 350, 500, 350);
 }
 
 class Jumper {
