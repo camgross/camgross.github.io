@@ -18,4 +18,4 @@ Explore how weight, leg force, and gravity affect bounce height.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
 
 <!-- Load your simulation script -->
-<script src="Microsims/trampoline/sketch.js"></script>
+<script src="/Microsims/trampoline/sketch.js"></script>
