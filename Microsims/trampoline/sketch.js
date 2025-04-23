@@ -109,10 +109,10 @@ function drawTrampoline() {
   strokeWeight(4);
 
   // Calculate the horizontal center of the canvas
-  let trampolineWidth = 400; // Adjust the width of the trampoline as needed
+  let trampolineWidth = 300; // Adjust the width of the trampoline as needed
   let leftX = (width - trampolineWidth) / 2; // Left edge of the trampoline
   let rightX = leftX + trampolineWidth; // Right edge of the trampoline
-  let trampolineY = 350; // Vertical position of the trampoline
+  let trampolineY = height - 50; // Vertical position of the trampoline (near the bottom of the canvas)
 
   // Draw the trampoline
   line(leftX, trampolineY, rightX, trampolineY);
