@@ -38,53 +38,27 @@ function setup() {
   gravityLabel = createDiv('');
   gravityLabel.position(400, 400);
 
-  // Remove the existing unit toggle
-unitToggle.remove();
-
-// Store the previous state of the unit toggle
-let previousState = useMetric;
-
-// Create a new checkbox with updated label and position
-if (previousState) {
+  // Create unit toggle checkbox
   unitToggle = createCheckbox('Metric (kg)', true);
-  weightSlider.elt.min = 40;
-  weightSlider.elt.max = 120;
-  weightSlider.value(70);
-} else {
-  unitToggle = createCheckbox('Standard (lbs)', false);
-  weightSlider.elt.min = 88;
-  weightSlider.elt.max = 265; // Assuming a max value for lbs
-  weightSlider.value(154);   // Assuming a default value for lbs
-}
-
-function toggleUnits() {
-  useMetric = unitToggle.checked();
-
-  // Update the position and attach the event listener
   unitToggle.position(100, 450);
   unitToggle.changed(toggleUnits);
-}
 
-function getGravityBodyName(value) {
-  if (value <= 2.5) return "Moon";
-  else if (value <= 6.0) return "Mars";
-  else return "Earth";
-}
   // Initialize jumper
   jumper = new Jumper();
 }
 
-
-
-
 function toggleUnits() {
   useMetric = unitToggle.checked();
-  let previousState = useMetric;
 
-  
-
-  unitToggle.position(100, 450);
-  unitToggle.changed(toggleUnits);
+  if (useMetric) {
+    weightSlider.elt.min = 40;
+    weightSlider.elt.max = 120;
+    weightSlider.value(70);
+  } else {
+    weightSlider.elt.min = 88;
+    weightSlider.elt.max = 265;
+    weightSlider.value(154);
+  }
 }
 
 function getGravityBodyName(value) {
@@ -95,12 +69,7 @@ function getGravityBodyName(value) {
 
 function draw() {
   background(220);
-  drawTrampoline() // Draw trampoline
-    stroke(120);
-    strokeWeight(4);
-    line(100, 350, 500, 350);
-  ellipse(width / 2, height / 2, 50, 50); // Example drawing
-}
+  drawTrampoline(); // Draw trampoline
 
   // Update simulation variables
   gravity = gravitySlider.value();
@@ -108,7 +77,7 @@ function draw() {
   let displayWeight = weight;
 
   if (!useMetric) {
-    weight = weight * 0.453592; // convert lbs to kg
+    weight = weight * 0.453592; // Convert lbs to kg
   }
   jumper.mass = weight;
   jumper.force = forceSlider.value();
@@ -121,7 +90,12 @@ function draw() {
   weightLabel.html(`Weight: ${nf(displayWeight, 0, 0)} ${useMetric ? "kg" : "lbs"}`);
   forceLabel.html(`Leg Force: ${nf(forceSlider.value(), 0, 0)}%`);
   gravityLabel.html(`Gravity: ${getGravityBodyName(gravity)}`);
+}
 
+function drawTrampoline() {
+  stroke(120);
+  strokeWeight(4);
+  line(100, 350, 500, 350);
 }
 
 class Jumper {
