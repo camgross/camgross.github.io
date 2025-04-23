@@ -15,32 +15,36 @@ function setup() {
   console.log("Canvas created:", canvas);
   canvas.parent("trampoline-sim-container"); // Attach canvas to the container
 
+  // Get the canvas position
+  let canvasX = canvas.position().x;
+  let canvasY = canvas.position().y;
+
   // Initialize sliders
   weightSlider = createSlider(40, 120, 70); // kg
-  weightSlider.position(100, 420);
+  weightSlider.position(canvasX + 20, canvasY + 420); // Adjusted position
   weightSlider.style('width', '120px');
 
   forceSlider = createSlider(0, 100, 50); // percent
-  forceSlider.position(250, 420);
+  forceSlider.position(canvasX + 160, canvasY + 420); // Adjusted position
   forceSlider.style('width', '120px');
 
   gravitySlider = createSlider(1.6, 9.8, 3.7, 0.1); // Moon to Earth gravity
-  gravitySlider.position(400, 420);
+  gravitySlider.position(canvasX + 300, canvasY + 420); // Adjusted position
   gravitySlider.style('width', '120px');
 
   // Create labels
   weightLabel = createDiv('');
-  weightLabel.position(100, 400);
+  weightLabel.position(canvasX + 20, canvasY + 400); // Adjusted position
 
   forceLabel = createDiv('');
-  forceLabel.position(250, 400);
+  forceLabel.position(canvasX + 160, canvasY + 400); // Adjusted position
 
   gravityLabel = createDiv('');
-  gravityLabel.position(400, 400);
+  gravityLabel.position(canvasX + 300, canvasY + 400); // Adjusted position
 
   // Create unit toggle checkbox
   unitToggle = createCheckbox('Metric (kg)', true);
-  unitToggle.position(100, 450);
+  unitToggle.position(canvasX + 20, canvasY + 450); // Adjusted position
   unitToggle.changed(toggleUnits);
 
   // Initialize jumper
