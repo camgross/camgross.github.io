@@ -20,8 +20,8 @@ function setup() {
   let canvasY = canvas.position().y;
 
   // Adjust offsets for elements below the canvas
-  let sliderOffsetY = canvasY + height + 20; // 20px below the canvas
-  let labelOffsetY = sliderOffsetY - 20;    // Labels appear just above sliders
+  let sliderOffsetY = canvasY + canvas.height + 20; // 20px below the canvas
+  let labelOffsetY = sliderOffsetY - 20;           // Labels appear just above sliders
 
   // Initialize sliders
   weightSlider = createSlider(40, 120, 70); // kg
@@ -37,13 +37,13 @@ function setup() {
   gravitySlider.style('width', '120px');
 
   // Create labels
-  weightLabel = createDiv('');
+  weightLabel = createDiv('Weight:');
   weightLabel.position(canvasX + 20, labelOffsetY); // Adjusted position
 
-  forceLabel = createDiv('');
+  forceLabel = createDiv('Force:');
   forceLabel.position(canvasX + 160, labelOffsetY); // Adjusted position
 
-  gravityLabel = createDiv('');
+  gravityLabel = createDiv('Gravity:');
   gravityLabel.position(canvasX + 300, labelOffsetY); // Adjusted position
 
   // Create unit toggle checkbox
