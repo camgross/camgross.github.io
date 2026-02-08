@@ -11,14 +11,14 @@ social:
 
 # Plinko Board of Learner Friction
 
-<iframe src="main.html" height="942px" width="480px" scrolling="no"></iframe>
+<iframe src="{{ site.baseurl }}/assets/plinko-learner-friction/main.html" height="942px" width="480px" scrolling="no"></iframe>
 
-[Run the Plinko Learner Friction MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+[Run the Plinko Learner Friction MicroSim Fullscreen]({{ site.baseurl }}/assets/plinko-learner-friction/main.html){ .md-button .md-button--primary }
 
 Copy this iframe to your website:
 
 ```html
-<iframe src="main.html" height="942px" width="480px" scrolling="no"></iframe>
+<iframe src="{{ site.baseurl }}/assets/plinko-learner-friction/main.html" height="942px" width="480px" scrolling="no"></iframe>
 ```
 
 ## Description

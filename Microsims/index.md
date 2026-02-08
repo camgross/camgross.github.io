@@ -19,3 +19,11 @@ Explore how weight, leg force, and gravity affect bounce height.
 
 <!-- Load your simulation script -->
 <script src="/Microsims/trampoline/sketch.js"></script>
+
+## Plinko Board of Learner Friction
+
+An interactive MicroSim illustrating the GED strategy concept—high-volume intake meets a plinko board of exit friction. Drop a learner (ball) through labeled pegs; it lands in one of five outcome slots.
+
+<iframe src="{{ site.baseurl }}/assets/plinko-learner-friction/main.html" height="942" width="480" scrolling="no" title="Plinko Board of Learner Friction"></iframe>
+
+**[Run the Plinko Learner Friction MicroSim fullscreen →]({{ site.baseurl }}/assets/plinko-learner-friction/main.html)**
