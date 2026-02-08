@@ -18,11 +18,9 @@ social:
 
 Copy this iframe to your website:
 
-{% raw %}
 ```html
 <iframe src="/assets/plinko-learner-friction/main.html" height="942px" width="480px" scrolling="no"></iframe>
 ```
-{% endraw %}
 
 ## Description
 
