@@ -1,0 +1,37 @@
+title:              Cam Gross
+email:              camgross1@gmail.com
+description:        Product Leader exploring AI, the product operating model, strategy, and team development
+author:             An AI Assisted Cam Gross
+baseurl:            ""
+url:                "https://camgross.github.io"
+
+# Social Profiles
+twitter_username:   camgross
+github_username:    camgross
+# facebook_username
+BlueSkySocial_username:  camgross.bsky.social
+# instagram_username:  
+linkedin_username: camerongross 
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   G-Q1Z0EBR2PW 
+
+# Build settings
+markdown:           kramdown
+# paginate:           5
+# paginate_path:      "/posts/page:num/"
+# plugins:
+#  - jekyll-feed
+#  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+
+nav:
+  - title: "About"
+    url: /about/
+  - title: "Resume"
+    url: /Resume/
+  - title: "Case Studies"
+    url: /case-studies/
+  - title: "Microsims"
+    url: /microsims/
+  - title: "Contact"
+    url: /contact/

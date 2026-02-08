@@ -1,0 +1,20 @@
+{
+  "title": "Plinko Board of Learner Friction",
+  "description": "Interactive simulation illustrating the GED strategy concept: high-volume intake meets a plinko board of exit friction. A learner (ball) drops through pegs labeled with friction points (family life, life disruption, learning disabilities, subject difficulty, self doubt, performance discouragement) and lands in one of five outcome slots (Never tested, Partially tested, Credentialed).",
+  "creator": "GED Testing Service / Product Strategy",
+  "date": "2026-02-06",
+  "subject": ["adult education", "GED", "strategy", "persistence", "exit friction", "learner journey"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "educationalLevel": "Adult",
+  "learningResourceType": "simulation",
+  "bloomLevel": ["Understand"],
+  "concepts": ["exit friction", "plinko board", "learner persistence", "credentialing"],
+  "library": "p5.js",
+  "controls": [
+    { "id": "drop", "type": "button", "label": "Drop", "description": "Release the learner (ball) from the top" },
+    { "id": "reset", "type": "button", "label": "Reset", "description": "Return ball to top and run again" }
+  ]
+}
