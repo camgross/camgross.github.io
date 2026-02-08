@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Plinko Board of Learner Friction
 description: An interactive MicroSim illustrating the GED strategy concept—high-volume intake meets a plinko board of exit friction. Drop a learner (ball) through labeled pegs; it lands in one of five outcome slots.
 quality_score: 85
@@ -13,13 +14,15 @@ social:
 
 <iframe src="{{ site.baseurl }}/assets/plinko-learner-friction/main.html" height="942px" width="480px" scrolling="no"></iframe>
 
-[Run the Plinko Learner Friction MicroSim Fullscreen]({{ site.baseurl }}/assets/plinko-learner-friction/main.html){ .md-button .md-button--primary }
+[Run the Plinko Learner Friction MicroSim Fullscreen]({{ site.baseurl }}/assets/plinko-learner-friction/main.html)
 
 Copy this iframe to your website:
 
+{% raw %}
 ```html
-<iframe src="{{ site.baseurl }}/assets/plinko-learner-friction/main.html" height="942px" width="480px" scrolling="no"></iframe>
+<iframe src="/assets/plinko-learner-friction/main.html" height="942px" width="480px" scrolling="no"></iframe>
 ```
+{% endraw %}
 
 ## Description
 
