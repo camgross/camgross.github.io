@@ -1,3 +1,211 @@
-// Clean Blog vendor SCSS was removed; add minimal placeholders so the build passes.
-// To restore full styling, add assets/vendor/startbootstrap-clean-blog/ and uncomment:
-// @import "../assets/vendor/startbootstrap-clean-blog/scss/styles.scss";
+// Clean Blog theme styles (vendor SCSS was removed; these restore layout and masthead)
+// Theme uses Bootstrap 4 (loaded via CDN in head.html)
+
+// Variables
+$gray-900: #212529;
+$white: #fff;
+$primary: #0085a1;
+$body-bg: #fff;
+$body-color: $gray-900;
+
+// Masthead (hero with background image)
+.masthead {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: calc(8rem + 57px);
+  padding-bottom: 8rem;
+  background: no-repeat center center;
+  background-color: $gray-900;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+.masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $gray-900;
+  opacity: 0.5;
+}
+
+.masthead .page-heading,
+.masthead .site-heading {
+  color: $white;
+  text-align: center;
+}
+
+.masthead .page-heading h1,
+.masthead .site-heading h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.masthead .page-heading .subheading,
+.masthead .site-heading .subheading {
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .masthead {
+    padding-top: calc(12rem + 57px);
+    padding-bottom: 12rem;
+  }
+  .masthead .page-heading h1,
+  .masthead .site-heading h1 {
+    font-size: 3rem;
+  }
+}
+
+// Navbar over masthead (transparent on top, solid on scroll)
+#mainNav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: transparent;
+  transition: padding-top 0.3s, padding-bottom 0.3s, background-color 0.3s;
+}
+
+#mainNav .navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $white;
+}
+
+#mainNav .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  padding: 0.75rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+#mainNav .navbar-nav .nav-link:hover,
+#mainNav .navbar-nav .nav-link:focus {
+  color: $white;
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+#mainNav.navbar-shrink {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: $body-bg;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#mainNav.navbar-shrink .navbar-brand {
+  color: $gray-900;
+}
+
+#mainNav.navbar-shrink .navbar-nav .nav-link {
+  color: $gray-900;
+}
+
+#mainNav.navbar-shrink .navbar-nav .nav-link:hover,
+#mainNav.navbar-shrink .navbar-nav .nav-link:focus {
+  color: $primary;
+  border-bottom-color: $primary;
+}
+
+@media (max-width: 991.98px) {
+  #mainNav {
+    background-color: $body-bg;
+  }
+  #mainNav .navbar-brand {
+    color: $gray-900;
+  }
+  #mainNav .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  #mainNav .navbar-nav .nav-link:hover {
+    color: $gray-900;
+  }
+}
+
+// Content area
+.container {
+  max-width: 1140px;
+}
+
+// Post preview on home
+.post-preview > a {
+  color: $gray-900;
+  text-decoration: none;
+}
+
+.post-preview > a:hover {
+  color: $primary;
+}
+
+.post-preview > a > .post-title {
+  font-size: 1.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-preview > a > .post-subtitle {
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.post-preview > .post-meta {
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 0;
+  color: #6c757d;
+}
+
+.post-preview > .post-meta > a {
+  color: $gray-900;
+  text-decoration: none;
+}
+
+.post-preview > .post-meta > a:hover {
+  color: $primary;
+  text-decoration: underline;
+}
+
+// Footer
+footer {
+  padding: 4rem 0 2rem;
+  margin-top: 4rem;
+}
+
+footer .list-inline {
+  margin-bottom: 1.5rem;
+}
+
+footer .list-inline-item a {
+  color: #6c757d;
+}
+
+footer .list-inline-item a:hover {
+  color: $primary;
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+// Page content typography (when using default layout)
+.container .row .mx-auto {
+  p {
+    margin-bottom: 1.25rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+}
+
+// Body padding for fixed navbar
+body {
+  padding-top: 57px;
+}

@@ -8,7 +8,7 @@ Sample microsims.
 
 ## 🪂 Trampoline MicroSim
 
-Explore how weight, leg force, and gravity affect bounce height.
+Explore how weight, leg force, and gravity affect bounce height. Adjust the sliders to see how each factor affects bounce height.
 
 <div id="trampoline-sim-wrapper">
   <div id="trampoline-sim-container"></div>
@@ -16,9 +16,9 @@ Explore how weight, leg force, and gravity affect bounce height.
 
 <!-- Load p5.js library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
-
-<!-- Load your simulation script -->
 <script src="/Microsims/trampoline/sketch.js"></script>
+
+**[Run the Trampoline MicroSim fullscreen →]({{ site.baseurl }}/assets/trampoline/main.html)**
 
 ## Plinko Board of Learner Friction
 

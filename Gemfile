@@ -1,3 +1,6 @@
+# Ruby 3.0+ recommended. With system Ruby 2.6, bundle install can fail on
+# native gems (ffi, eventmachine). Install Ruby 3.x via: brew install ruby
+# then run: bundle install && bundle exec jekyll serve
 source "https://rubygems.org"
 
 gem "jekyll", ">= 3.8.5"
