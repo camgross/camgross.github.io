@@ -26,6 +26,16 @@ const slotZoneTop = drawHeight - 120;  // last 120px for slots (room for labels)
 
 let dropButton, resetButton;
 
+// Outcome display box (empty zone on board: center, between peg rows)
+const outcomeBoxX = boardWidth * 0.15;
+const outcomeBoxY = 388;
+const outcomeBoxW = boardWidth * 0.7;
+const outcomeBoxH = 64;
+
+// Confetti for Credentialed outcome
+let confettiParticles = [];
+const confettiLifetime = 180;  // frames (~3 s at 60fps)
+
 function setup() {
   const canvas = createCanvas(boardWidth, canvasHeight);
   const mainElement = document.querySelector('main');
@@ -36,12 +46,18 @@ function setup() {
   randomizeCenterLifeDisruptionPegs();
   resetBall();
 
+  // Center both buttons under the Credentialed (center) outcome
   dropButton = createButton('Intent');
-  dropButton.position(12, drawHeight + 45);
+  const intentW = 72;
+  const resetW = 58;
+  const buttonGap = 14;
+  const buttonGroupWidth = intentW + buttonGap + resetW;
+  const buttonLeftX = (boardWidth - buttonGroupWidth) / 2;
+  dropButton.position(buttonLeftX, drawHeight + 45);
   dropButton.mousePressed(releaseBall);
 
   resetButton = createButton('Reset');
-  resetButton.position(120, drawHeight + 45);
+  resetButton.position(buttonLeftX + intentW + buttonGap, drawHeight + 45);
   resetButton.mousePressed(handleReset);
 
   describe('Plinko board of learner friction: narrow tall board; drop a ball (learner) through labeled pegs; it lands in one of five slots. First peg randomizes on Reset.');
@@ -148,6 +164,7 @@ function releaseBall() {
   ball.vy = 0.5;
   ballLanded = false;
   outcomeSlot = -1;
+  confettiParticles = [];
   dropButton.html('Replay');
 }
 
@@ -158,6 +175,28 @@ function resetBall() {
   ball.vy = 0;
   ballLanded = true;
   outcomeSlot = -1;
+  confettiParticles = [];
+}
+
+function spawnConfetti() {
+  const cx = boardWidth / 2;
+  const cy = outcomeBoxY + outcomeBoxH / 2;
+  const colors = ['#e74c3c', '#3498db', '#2ecc71', '#f1c40f', '#9b59b6', '#1abc9c', '#e67e22'];
+  for (let i = 0; i < 80; i++) {
+    const angle = random(TWO_PI);
+    const speed = random(4, 12);
+    confettiParticles.push({
+      x: cx + random(-outcomeBoxW / 2, outcomeBoxW / 2),
+      y: cy,
+      vx: cos(angle) * speed,
+      vy: random(-14, -6),
+      color: random(colors),
+      size: random(4, 10),
+      rotation: random(TWO_PI),
+      rotSpeed: random(-0.2, 0.2),
+      life: confettiLifetime
+    });
+  }
 }
 
 function draw() {
@@ -284,6 +323,7 @@ function draw() {
       }
       if (outcomeSlot < 0) outcomeSlot = 4;
       ballLanded = true;
+      if (outcomeSlot === 2) spawnConfetti();  // Credentialed
     }
   }
 
@@ -292,19 +332,55 @@ function draw() {
   noStroke();
   circle(ball.x, ball.y, ballRadius * 2);
 
+  // Outcome in outlined zone on the board (only when landed)
   if (ballLanded && outcomeSlot >= 0) {
-    fill(0, 80, 0);
+    const isCredentialed = outcomeSlot === 2;
+    // Outcome box: fill and outline
+    if (isCredentialed) {
+      fill(255, 248, 220);
+      stroke(218, 165, 32);
+    } else {
+      fill(255);
+      stroke(100);
+    }
+    strokeWeight(3);
+    rect(outcomeBoxX, outcomeBoxY, outcomeBoxW, outcomeBoxH, 8);
+    if (isCredentialed) fill(0, 100, 0); else fill(0);
     noStroke();
-    textSize(defaultTextSize);
-    textAlign(CENTER, TOP);
-    text('Outcome: ' + slotLabels[outcomeSlot], boardWidth / 2, slotTop - 32);
+    textSize(20);
+    textStyle(BOLD);
+    textAlign(CENTER, CENTER);
+    text('Outcome: ' + slotLabels[outcomeSlot], outcomeBoxX + outcomeBoxW / 2, outcomeBoxY + outcomeBoxH / 2);
+    textStyle(NORMAL);
+  }
+
+  // Confetti (Credentialed): update and draw
+  for (let i = confettiParticles.length - 1; i >= 0; i--) {
+    const p = confettiParticles[i];
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.25;
+    p.rotation += p.rotSpeed;
+    p.life--;
+    if (p.life <= 0 || p.y > drawHeight + 20) {
+      confettiParticles.splice(i, 1);
+      continue;
+    }
+    push();
+    translate(p.x, p.y);
+    rotate(p.rotation);
+    fill(p.color);
+    noStroke();
+    rect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+    pop();
   }
 
   fill('black');
   noStroke();
   textSize(defaultTextSize);
   textAlign(LEFT, CENTER);
-  text('Drop = release learner; Reset = new first peg + start over', 12, drawHeight + 78);
+  textAlign(CENTER, CENTER);
+  text('Intent = learner begins their journey to GED ; Reset = New learner', boardWidth / 2, drawHeight + 78);
 }
 
 function windowResized() {
