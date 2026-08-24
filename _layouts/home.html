@@ -1,66 +1,56 @@
 ---
 layout: default
 ---
-
-<!-- Page Header -->
-{% if page.background %}
-<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
-  {% else %}
-  <header class="masthead">
-    {% endif %}
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>{{ site.title }}</h1>
-            {% if site.description %}
-            <span class="subheading">{{ site.description }}</span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-
-        {{ content }}
-
-        <!-- Home Post List -->
-        {% for post in site.posts limit : 5 %}
-
-        <article class="post-preview">
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="post-title">{{ post.title }}</h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-            {% else %}
-            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
-            {% endif %}
-          </a>
-          <p class="post-meta">Posted by
-            {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.author }}
-            {% endif %}
-            on
-            {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}            
-          </p>
-        </article>
-
-        <hr>
-
-        {% endfor %}
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
-        </div>
-
-      </div>
-    </div>
+<section class="hero">
+  <div class="hero-brand">
+    <h1>
+      <span class="hero-part">GreaterTh</span><span class="hero-anchor-col"><span class="hero-mark" aria-hidden="true"><span class="hero-gt">&gt;</span><span class="hero-m">m</span></span><span class="hero-anchor-letter">a</span></span><span class="hero-part">n Media</span>
+    </h1>
   </div>
+  <p class="hero-role">{{ site.hero_subtext }}</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card-grid card-grid-3">
+    <a class="card card-tile" href="{{ '/case-studies/' | relative_url }}">
+      <span class="card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          <path d="M2 13h20"/>
+        </svg>
+      </span>
+      <h3>Work</h3>
+    </a>
+    <a class="card card-tile" href="{{ '/applied-ai/' | relative_url }}">
+      <span class="card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </span>
+      <h3>Community</h3>
+    </a>
+    <a class="card card-tile" href="{{ '/curiosities/' | relative_url }}">
+      <span class="card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 2v2"/>
+          <path d="M12 20v2"/>
+          <path d="m4.93 4.93 1.41 1.41"/>
+          <path d="m17.66 17.66 1.41 1.41"/>
+          <path d="M2 12h2"/>
+          <path d="M20 12h2"/>
+          <path d="m4.93 19.07 1.41-1.41"/>
+          <path d="m17.66 6.34 1.41-1.41"/>
+        </svg>
+      </span>
+      <h3>Curiosities</h3>
+    </a>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+# AI in Product / Applied AI for Product Management sessions only.
+# Add new sessions here with a full ISO date (YYYY-MM-DD).
+# RSVP CTA shows only when at least one session.date is today or in the future
+# (relative to the next Jekyll build). There is no Meetup API polling —
+# paste new events into this file when they are scheduled.
+
+- title: "AI in Product Workshop: AI-Powered Product Development Pipeline — Writ"
+  date: 2026-08-26
+  summary: Hands-on workshop with Adam Sellke on Writ, an open-source framework for contract-first AI development. Not for beginners — bring a laptop and your product idea.
+  home_summary: Hands-on workshop with Adam Sellke on contract-first AI development for product managers.
+  meetup_url: https://www.meetup.com/applied_ai/events/316088820/
+  linkedin_url: https://www.linkedin.com/posts/camerongross_ai-in-product-workshop-ai-powered-product-activity-7493624399414157312-pd9z
+
+- title: Cursor for Product Managers
+  date: 2026-01-26
+  summary: Dave Mathias guided product leaders through Carl Vellotti's Cursor for PMs coursework — evaluating where Cursor accelerates work without removing the human from the effort.
+  home_summary: Dave Mathias guided product leaders through Carl Vellotti's Cursor for PMs coursework.
+  linkedin_url: https://www.linkedin.com/posts/camerongross_applied-ai-for-product-management-was-something-activity-7421566900037505024-q564
+
+- title: "AI in Product Management: New Toys for the Holidays"
+  date: 2025-12-18
+  summary: Tanya Coller hosted a hands-on Lovable workshop for product managers exploring vibe coding — build an application you create alongside a new appreciation for engineering teammates.
+
+- title: Applied AI for Product Management — Blank Metal panel
+  date: 2025-11-20
+  summary: Full house at Lab651. Blank Metal led a compelling conversation on AI tools — including the reminder that teams can go fast in the wrong direction without smart product management.
+  linkedin_url: https://www.linkedin.com/posts/camerongross_it-was-a-full-house-last-night-at-lab651-activity-7397641175488262144-Lip5
+
+- title: The Death of the Backlog
+  date: 2025-06-01
+  summary: Joe Ruekert on why the future of product management is more human than ever. Open discussion for PM stories, topics, and challenges.
+  linkedin_url: https://www.linkedin.com/posts/camerongross_applied-ai-for-product-management-june-activity-7334851211549913088-ckGQ
+  link_label: Announcement →
+
+- title: How I Built It? Buildathon Stories
+  date: 2025-04-16
+  summary: Shannon Seaver on hackathons, Lovable She Builds Buildathon Season 2, and building AI-native software as an educator and founder.
+  meetup_url: https://www.meetup.com/applied_ai/events/314187753/
+  minnestar_url: https://minnestar.org/calendar2/ai-in-product-management-how-i-built-it-buildathon-stories-2/
+
+- title: Agentdisco — AI-Supported Discovery
+  date: 2025-03-04
+  summary: Gary Koelling introduced Agentdisco, a custom GPT for summarizing unstructured user feedback using design thinking, JTBD, and continuous discovery frameworks.
+  linkedin_url: https://www.linkedin.com/posts/camerongross_chatgpt-agentdisco-activity-7302730655434428417-puEq
