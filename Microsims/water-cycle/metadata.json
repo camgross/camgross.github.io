@@ -1,0 +1,17 @@
+{
+  "title": "Water Cycle MicroSim",
+  "description": "Interactive tap-through simulation of the water cycle: evaporation, condensation, precipitation, and collection.",
+  "creator": "Cam Gross",
+  "date": "2026-08-23",
+  "subject": ["earth science", "water cycle", "evaporation", "precipitation"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "educationalLevel": "Middle School",
+  "learningResourceType": "simulation",
+  "library": "p5.js",
+  "controls": [
+    { "id": "tap", "type": "touch", "label": "Tap", "description": "Tap or click to advance to the next stage" }
+  ]
+}
