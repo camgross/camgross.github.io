@@ -92,19 +92,31 @@ img, svg {
 .site-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  flex-shrink: 0;
+  overflow: visible;
   text-decoration: none;
   color: var(--gtm-gray-900);
 
-  img, svg {
-    height: 2rem;
-    width: auto;
-  }
-
   &:hover {
-    color: var(--gtm-gray-900);
     opacity: 0.85;
   }
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logo-gt {
+  color: var(--gtm-orange);
+}
+
+.logo-m {
+  color: var(--gtm-navy);
 }
 
 .nav-toggle {
